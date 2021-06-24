@@ -1,0 +1,82 @@
+https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists
+
+HR Analytics: Job Change of Data Scientists
+Predict who will move to a new job
+
+Context and Content
+A company which is active in Big Data and Data Science wants to hire data scientists among people who successfully pass some courses which conduct by the company. Many people signup for their training. Company wants to know which of these candidates are really wants to work for the company after training or looking for a new employment because it helps to reduce the cost and time as well as the quality of training or planning the courses and categorization of candidates. Information related to demographics, education, experience are in hands from candidates signup and enrollment.
+
+This dataset designed to understand the factors that lead a person to leave current job for HR researches too. By model(s) that uses the current credentials,demographics,experience data you will predict the probability of a candidate to look for a new job or will work for the company, as well as interpreting affected factors on employee decision.
+
+The whole data divided to train and test . Target isn't included in test but the test target values data file is in hands for related tasks. A sample submission correspond to enrollee_id of test set provided too with columns : enrollee _id , target
+
+Note:
+
+The dataset is imbalanced.
+Most features are categorical (Nominal, Ordinal, Binary), some with high cardinality.
+Missing imputation can be a part of your pipeline as well.
+Features
+
+enrollee_id : Unique ID for candidate
+
+city: City code
+
+city_ development _index : Developement index of the city (scaled)
+
+gender: Gender of candidate
+
+relevent_experience: Relevant experience of candidate
+
+enrolled_university: Type of University course enrolled if any
+
+education_level: Education level of candidate
+
+major_discipline :Education major discipline of candidate
+
+experience: Candidate total experience in years
+
+company_size: No of employees in current employer's company
+
+company_type : Type of current employer
+
+lastnewjob: Difference in years between previous job and current job
+
+training_hours: training hours completed
+
+target: 0 – Not looking for job change, 1 – Looking for a job change
+
+Inspiration
+Predict the probability of a candidate will work for the company
+Interpret model(s) such a way that illustrate which features affect candidate decision
+Please refer to the following task for more details:
+https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists/tasks?taskId=3015
+
+
+Predict the probability of an candidate looking for a new job
+Möbius · 35 Submissions · 2 months to go
+
+Task Details
+This dataset designed to understand the factors that lead a person will work for the company(leaving current job) ,and the goal of this task is building model(s) that uses the current credentials,demographics,experience to predict the probability of a candidate looking for a new job or will work for the company.
+
+The whole data divided to train and test . Also sample submission has been provided correspond to enrollee_ id of test set ( enrolle_ id | target)
+
+Note:
+
+The dataset is imbalanced so it might affect your result if you dont handle it
+Most features are categorical (Nominal, Ordinal, Binary), some with high cardinality so encoding methods and techniques will help to boost models performance
+Missing imputation strategy might affect the results so it can be a part of your pipeline as well.
+Expected Submission
+Solution Notebook with following mandatory outputs:
+
+Prediction: for each row in test data the predicted probability of candidate looking for a job, (probability of the class with the greater label).Format is given in sample_submission.csv:
+enrollee_id : Unique ID for enrollee
+target : probability of an enrollee looking for a job change
+Model Evaluation: roc_ auc_ score of (answer,prediction probability of rows in test data)
+*answer: test target values(download from : https://www.kaggle.com/arashnic/job-change-dataset-answer)
+Model Interpretation: Interpret model(s) such a way that illustrate which features affect candidates decision
+Evaluation
+The evaluation metric is area under the ROC curve score.
+
+You have better first evaluate your model(s) with your selected strategy (KFold CV, hold_ out,…) and then predict test (sample_submission) and finally compare the result for your own with test target values and find out your model performance on unseen data and your model fitness.
+
+The pipeline you apply for getting result (EDA, preprocessing, feature engineering and selection , model building and evaluation strategy and so on, will be evaluated by your model performance on unseen data(aug_test.csv)
